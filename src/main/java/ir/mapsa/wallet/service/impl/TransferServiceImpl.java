@@ -48,9 +48,9 @@ public class TransferServiceImpl implements TransferService {
                 transactionReport.setDescription("bad gateway");
                 transactionReport.setStatus(false);
                 transactionService.saveOrUpdate(transactionReport);
-                throw new WalletNotActiveException("wallet is not active");
+                throw new BadGatewayException("bad gateway");
             } else if (!sourceWallet.getStatus()) {
-                transactionReport.setDescription("bad gateway");
+                transactionReport.setDescription("wallet is not active");
                 transactionReport.setStatus(false);
                 transactionService.saveOrUpdate(transactionReport);
             } else {

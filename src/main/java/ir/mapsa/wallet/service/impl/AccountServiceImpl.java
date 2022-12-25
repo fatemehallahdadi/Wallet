@@ -23,7 +23,7 @@ public class AccountServiceImpl extends BaseServiceImpl<Account, Long, AccountRe
         if (account.getId() == null) {
             throw new NotFoundExceptions("your entity not found");
         } else {
-            return repository.findByUsername(username);
+            return repository.findByUsernameAndPassword(username,password);
         }
     }
 
