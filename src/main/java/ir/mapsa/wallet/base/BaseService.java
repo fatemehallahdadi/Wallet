@@ -17,6 +17,6 @@ public interface BaseService<T extends BaseEntity, ID extends Serializable> {
 
     List<T> findAll() throws BaseException;
 
-    <S extends T> List<S> findAll(Example<S> example);
+//    <S extends T> List<S> findAllByExample(Example<S> example);
 
 }

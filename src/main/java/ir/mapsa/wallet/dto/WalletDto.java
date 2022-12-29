@@ -23,7 +23,6 @@ public class WalletDto extends BaseDto {
 
     private String walletName;
 
-    @NotBlank
     private String walletId;
 
     private BigDecimal balance;

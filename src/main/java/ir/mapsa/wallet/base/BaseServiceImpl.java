@@ -53,8 +53,8 @@ public class BaseServiceImpl<T extends BaseEntity,ID extends Serializable,
         return repository.findAll();
     }
 
-    @Override
-    public <S extends T> List<S> findAll(Example<S> example) {
-        return null;
-    }
+//    @Override
+//    public <S extends T> List<S> findAllByExample(Example<S> example) {
+//        return null;
+//    }
 }

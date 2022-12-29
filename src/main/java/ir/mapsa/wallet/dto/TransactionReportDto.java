@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Setter
@@ -21,18 +22,16 @@ public class TransactionReportDto extends BaseDto {
 
     private Boolean status;
 
-    @NotBlank
+    @NotNull
     private BigDecimal amount;
 
-    @NotBlank
     private Long sourceWalletId;
 
-    @NotBlank
     private Long destinationWalletId;
 
     private String description;
 
-    @NotBlank
+    @NotNull
     private EType type;
 
 }

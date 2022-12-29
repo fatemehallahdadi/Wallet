@@ -8,6 +8,8 @@ import ir.mapsa.wallet.service.AccountService;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class AccountServiceImpl extends BaseServiceImpl<Account, Long, AccountRepository>
@@ -15,6 +17,11 @@ public class AccountServiceImpl extends BaseServiceImpl<Account, Long, AccountRe
 
     public AccountServiceImpl(AccountRepository repository) {
         super(repository);
+    }
+
+    @Override
+    public List<Account> findAll(){
+        return repository.findAll();
     }
 
     @Override

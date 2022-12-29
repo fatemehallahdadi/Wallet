@@ -1,6 +1,7 @@
 package ir.mapsa.wallet.controller;
 
 import ir.mapsa.wallet.dto.AccountDto;
+import ir.mapsa.wallet.entities.Account;
 import ir.mapsa.wallet.exceptions.BaseException;
 import ir.mapsa.wallet.mapper.AccountMapper;
 import ir.mapsa.wallet.service.AccountService;
@@ -35,7 +36,8 @@ public class AccountController {
     }
     @GetMapping
     public List<AccountDto> findAll() throws BaseException{
-        return accountMapper.convertListEntityToListDto(accountService.findAll());
+        List<Account> all = accountService.findAll();
+        return accountMapper.convertListEntityToListDto(all);
     }
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) throws BaseException{
